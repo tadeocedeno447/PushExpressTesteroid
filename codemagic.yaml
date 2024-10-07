@@ -7,7 +7,11 @@ workflows:
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.pushExpressTesteroid
+        provisioning_profiles:
+          - provisioning_profile_name: "Push express"
+            bundle_identifier: "com.pushExpressTesteroid"
+          - provisioning_profile_name: "Push Express Extension"
+            bundle_identifier: "com.pushExpressTesteroid.notificationsvc"
       vars:
         BUNDLE_ID: "com.pushExpressTesteroid"
         XCODE_WORKSPACE: "pushExpressTest.xcworkspace" # <-- Put the name of your Xcode workspace here
