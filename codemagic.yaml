@@ -8,14 +8,14 @@ workflows:
       ios_signing:
         distribution_type: app_store
         provisioning_profiles:
-          - provisioning_profile_name: "Push express"
+          - profile_reference: "Push express" # Ссылка на профиль
             bundle_identifier: "com.pushExpressTesteroid"
-          - provisioning_profile_name: "Push Express Extension"
+          - profile_reference: "Push Express Extension" # Ссылка на профиль для нового таргета
             bundle_identifier: "com.pushExpressTesteroid.notificationsvc"
       vars:
         BUNDLE_ID: "com.pushExpressTesteroid"
-        XCODE_WORKSPACE: "pushExpressTest.xcworkspace" # <-- Put the name of your Xcode workspace here
-        XCODE_SCHEME: "pushExpressTest" # <-- Put the name of your Xcode scheme here
+        XCODE_WORKSPACE: "pushExpressTest.xcworkspace"
+        XCODE_SCHEME: "pushExpressTest"
         APP_STORE_APPLE_ID: 6736360891
       xcode: 15.3
     scripts:
@@ -45,9 +45,5 @@ workflows:
           failure: false
       app_store_connect:
         auth: integration
-        # Configuration related to TestFlight (optional)
-        # Note: This action is performed during post-processing.
         submit_to_testflight: false
-        # Configuration related to App Store (optional)
-        # Note: This action is performed during post-processing.
         submit_to_app_store: false
