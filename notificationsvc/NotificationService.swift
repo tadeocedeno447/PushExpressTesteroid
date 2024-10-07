@@ -1,22 +1,27 @@
 //
 //  NotificationService.swift
-//  pushExpressTest
+//  notificationsvc
 //
-//  Created by D K on 01.10.2024.
+//  Created by D K on 07.10.2024.
 //
 
 import UserNotifications
-import SdkPushExpress
 
 class NotificationService: UNNotificationServiceExtension {
 
     var contentHandler: ((UNNotificationContent) -> Void)?
     var bestAttemptContent: UNMutableNotificationContent?
-    let notificationServiceManager = NotificationManager()
 
     override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
         self.contentHandler = contentHandler
-        notificationServiceManager.handleNotification(request: request, contentHandler: contentHandler)
+        bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
+        
+        if let bestAttemptContent = bestAttemptContent {
+            // Modify the notification content here...
+            bestAttemptContent.title = "\(bestAttemptContent.title) [modified]"
+            
+            contentHandler(bestAttemptContent)
+        }
     }
     
     override func serviceExtensionTimeWillExpire() {
