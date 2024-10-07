@@ -5,7 +5,12 @@ target 'pushExpressTest' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-pod 'lottie-ios'
+   pod 'FirebaseAuth'
+   pod 'FirebaseFirestore'
+   pod 'FirebaseAnalytics'
+   pod 'FirebaseCore'
+   pod ‘Firebase/Database’
+   pod 'FirebaseMessaging'
 
   # Pods for pushExpressTest
 

@@ -15,10 +15,6 @@
 		64019CB42CABD81B00C87402 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 64019CB32CABD81B00C87402 /* Base */; };
 		64019CBC2CABD83000C87402 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64019CBB2CABD83000C87402 /* SwiftUIView.swift */; };
 		64019CC42CABFE9D00C87402 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64019CC32CABFE9D00C87402 /* GoogleService-Info.plist */; };
-		64019CC72CABFED800C87402 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 64019CC62CABFED800C87402 /* FirebaseAnalytics */; };
-		64019CC92CABFED800C87402 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 64019CC82CABFED800C87402 /* FirebaseCore */; };
-		64019CCB2CABFED800C87402 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 64019CCA2CABFED800C87402 /* FirebaseFirestore */; };
-		64019CCD2CABFED800C87402 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 64019CCC2CABFED800C87402 /* FirebaseMessaging */; };
 		64019CD02CAC0A3F00C87402 /* SdkPushExpress in Frameworks */ = {isa = PBXBuildFile; productRef = 64019CCF2CAC0A3F00C87402 /* SdkPushExpress */; };
 		64019CD32CAC0B4000C87402 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64019CD22CAC0B4000C87402 /* NotificationService.swift */; };
 		CA9D20D56B3B0774E656930B /* Pods_pushExpressTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 742FBF770E0F75DD35ECF19B /* Pods_pushExpressTest.framework */; };
@@ -48,11 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64019CC72CABFED800C87402 /* FirebaseAnalytics in Frameworks */,
 				64019CD02CAC0A3F00C87402 /* SdkPushExpress in Frameworks */,
-				64019CCB2CABFED800C87402 /* FirebaseFirestore in Frameworks */,
-				64019CCD2CABFED800C87402 /* FirebaseMessaging in Frameworks */,
-				64019CC92CABFED800C87402 /* FirebaseCore in Frameworks */,
 				CA9D20D56B3B0774E656930B /* Pods_pushExpressTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,10 +149,6 @@
 			);
 			name = pushExpressTest;
 			packageProductDependencies = (
-				64019CC62CABFED800C87402 /* FirebaseAnalytics */,
-				64019CC82CABFED800C87402 /* FirebaseCore */,
-				64019CCA2CABFED800C87402 /* FirebaseFirestore */,
-				64019CCC2CABFED800C87402 /* FirebaseMessaging */,
 				64019CCF2CAC0A3F00C87402 /* SdkPushExpress */,
 			);
 			productName = pushExpressTest;
@@ -192,7 +180,6 @@
 			);
 			mainGroup = 64019C9B2CABD81900C87402;
 			packageReferences = (
-				64019CC52CABFED800C87402 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				64019CCE2CAC0A3F00C87402 /* XCRemoteSwiftPackageReference "pushexpress-swift-sdk" */,
 			);
 			productRefGroup = 64019CA52CABD81900C87402 /* Products */;
@@ -332,7 +319,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -395,7 +382,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -512,14 +499,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		64019CC52CABFED800C87402 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 11.3.0;
-			};
-		};
 		64019CCE2CAC0A3F00C87402 /* XCRemoteSwiftPackageReference "pushexpress-swift-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pushexpress/pushexpress-swift-sdk";
@@ -531,26 +510,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		64019CC62CABFED800C87402 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 64019CC52CABFED800C87402 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		64019CC82CABFED800C87402 /* FirebaseCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 64019CC52CABFED800C87402 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCore;
-		};
-		64019CCA2CABFED800C87402 /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 64019CC52CABFED800C87402 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		64019CCC2CABFED800C87402 /* FirebaseMessaging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 64019CC52CABFED800C87402 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseMessaging;
-		};
 		64019CCF2CAC0A3F00C87402 /* SdkPushExpress */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 64019CCE2CAC0A3F00C87402 /* XCRemoteSwiftPackageReference "pushexpress-swift-sdk" */;
