@@ -5,13 +5,9 @@ workflows:
     integrations:
       app_store_connect: CodeMagic Api Key
     environment:
-      ios_signing:
+            ios_signing:
         distribution_type: app_store
-        provisioning_profiles:
-          - profile_reference: "Push express" # Ссылка на профиль
-            bundle_identifier: "com.pushExpressTesteroid"
-          - profile_reference: "Push Express Extension" # Ссылка на профиль для нового таргета
-            bundle_identifier: "com.pushExpressTesteroid.notificationsvc"
+        bundle_identifier: com.pushExpressTesteroid
       vars:
         BUNDLE_ID: "com.pushExpressTesteroid"
         XCODE_WORKSPACE: "pushExpressTest.xcworkspace"
